@@ -22,3 +22,32 @@ const gameEvents = new Map([
   [80, "⚽️ GOAL"],
   [92, "🔶 Yellow card"],
 ]);
+
+// 1
+// const events = new Set(gameEvents.values());
+// console.log(Array.from(events));
+
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// 2
+// gameEvents.delete(64);
+// console.log(gameEvents);
+
+// 3
+// const averageValueEvents = `Событие в этом матче, появлялось в среднем, раз в ${Math.round(90 / gameEvents.size)} мин.`;
+// console.log(averageValueEvents);
+
+// 4
+for (let [minutes, event] of gameEvents) {
+  // if (minutes < 45) {
+  //   console.log(`[ПЕРВАЯ ПОЛОВИНА] ${minutes}: ${event}`);
+  // } else {
+  //   console.log(`[SECOND ПОЛОВИНА] ${minutes}: ${event}`);
+  // }
+
+  // minutes < 45 ? console.log(`[ПЕРВАЯ ПОЛОВИНА] ${minutes}: ${event}`) : console.log(`[SECOND ПОЛОВИНА] ${minutes}: ${event}`);
+
+  const half = minutes < 45 ? 'FIRST HALF' : 'SECOND HALF';
+  console.log(`[${half}] ${minutes}: ${event}`);
+}
